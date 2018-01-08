@@ -44,6 +44,14 @@ public class EmpController {
 		System.out.println(" lazyStatus >>> " + lazyStatus);
 		return empDAO.getAll(lazyStatus/* isEager */);
 	}
-	
-	
+
+	@ResponseBody
+	@RequestMapping(value = "/getEmpsByRowNum", method = { RequestMethod.GET }, produces = { MediaType.APPLICATION_JSON_VALUE })
+	public List<EmpVO> getEmpsByRowNum(@RequestParam("n1") int n1, @RequestParam("n2") int n2) {
+		// 測試URL : http://localhost:8080/Spring5_MVC_Git/spring_mvc/empCRUD/getEmpsByRowNum?n1=1&n2=3
+		System.out.println(" n1 >>> " + n1);
+		System.out.println(" n2 >>> " + n2);
+		return empDAO.getEmpsByRowNumber(n1, n2);
+	}
+
 }
