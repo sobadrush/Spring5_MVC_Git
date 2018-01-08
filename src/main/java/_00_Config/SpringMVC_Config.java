@@ -30,3 +30,4 @@ public class SpringMVC_Config implements WebMvcConfigurer {
 	}
 
 }
+

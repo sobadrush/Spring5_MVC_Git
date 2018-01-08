@@ -18,7 +18,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class RootConfig {
 
 	@Autowired
-	private Environment env;
+	private Environment env; // https://www.jianshu.com/p/49e950b0b008
 
 	@Bean
 	public DataSource driverManagerDS() {
