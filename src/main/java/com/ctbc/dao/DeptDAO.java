@@ -17,7 +17,7 @@ import com.ctbc.vo.DeptVO;
 @Repository
 public class DeptDAO {
 
-	private static final String GET_ALL_STMT = "SELECT * FROM dept_TB13";
+	private static final String GET_ALL_STMT = "SELECT * FROM z40180_deptTB";
 
 	@Resource(name = "myJdbcTemplate")
 	private JdbcOperations jdbcTemplate;

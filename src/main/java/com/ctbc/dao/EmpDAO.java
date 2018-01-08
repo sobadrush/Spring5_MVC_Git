@@ -14,9 +14,9 @@ import com.ctbc.vo.EmpVO;
 @Repository
 public class EmpDAO {
 
-	private static final String GET_ALL_STMT = "SELECT * FROM emp_TB13";
-	private static final String GET_EMPS_BY_DEPTNO = "SELECT * FROM dept_TB13 WHERE deptno = (" +
-														   " SELECT deptno FROM emp_TB13 WHERE empno = ? " +
+	private static final String GET_ALL_STMT = "SELECT * FROM z40180_empTB";
+	private static final String GET_EMPS_BY_DEPTNO = "SELECT * FROM z40180_deptTB WHERE deptno = (" +
+														   " SELECT deptno FROM z40180_empTB WHERE empno = ? " +
 													  ")";
 
 	@Autowired
