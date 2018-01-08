@@ -16,14 +16,19 @@ public class EmpDAO {
 
 	private static final String GET_ALL_STMT = "SELECT * FROM z40180_empTB";
 	private static final String GET_EMPS_BY_DEPTNO = "SELECT * FROM z40180_deptTB WHERE deptno = (" +
-														   " SELECT deptno FROM z40180_empTB WHERE empno = ? " +
-													  ")";
+			" SELECT deptno FROM z40180_empTB WHERE empno = ? " +
+			")";
+
+	private static final String GET_EMPS_BY_ROW_NUM = " SELECT * FROM ( " +
+			"                                                 SELECT ROW_NUMBER() OVER(ORDER BY hiredate ASC) AS ROWID , * " +
+			"                                                 FROM z40180_empTB " +
+			"                                            ) AS temp WHERE temp.ROWID BETWEEN ? AND ? ";
 
 	@Autowired
 	private JdbcOperations jdbcTemplate;
 
 //	private static final MyRowMappers myRowMappers = new MyRowMappers();
-	
+
 	public List<EmpVO> getAll(boolean isEager) {
 		List<EmpVO> eList = jdbcTemplate.query(GET_ALL_STMT, new EmpRowMapper());
 
@@ -36,6 +41,14 @@ public class EmpDAO {
 
 		return eList;
 	}
+
+	public List<EmpVO> getEmpsByRowNumber(int n1, int n2) {
+		List<EmpVO> eList = jdbcTemplate.query(GET_EMPS_BY_ROW_NUM, new Object[] { n1, n2 }, new EmpRowMapper());
+		return eList;
+	}
+	
 }
+
+
 
 
