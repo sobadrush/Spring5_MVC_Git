@@ -7,45 +7,9 @@
     <meta charset="UTF-8">
     <title>分頁測試</title>
 	<style>
-		table {
-		    border-collapse: collapse;
-		    width: 100%;
-		}
-		
-		th, td {
-		    text-align: left;
-		    padding: 8px;
-		}
-		
-		tr:nth-child(even){ background-color: #f2f2f2 }
-		
-		th {
-		    background-color: #009FCC;
-		    color: white;
-		}
-		
-		.pagination {
-		    display: inline-block;
-		}
-		
-		.pagination a {
-		    color: black;
-		    float: left;
-		    padding: 8px 16px;
-		    text-decoration: none;
-		    transition: background-color .3s;
-		    border: 1px solid #ddd;
-		    font-size: 22px;
-		}
-		
-		.pagination a.active {
-		    background-color: #4CAF50;
-		    color: white;
-		    border: 1px solid #4CAF50;
-		}
-		
-		.pagination a:hover:not(.active) { background-color: #ddd; }
+		/* CSS */
 	</style>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/spring_mvc/resources/css/tableStyle.css" />
   </head>
   <body>
       

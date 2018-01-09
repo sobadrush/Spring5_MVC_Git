@@ -31,6 +31,7 @@ public class MyWebAppInitializer implements WebApplicationInitializer {
          // registration.addMapping("/");  
          registration.addMapping("/spring_mvc/*");  
     }  
+    
 }  
 
 // Question :  / 和 /*　有什么区别？
