@@ -16,8 +16,8 @@ public class EmpDAO {
 
 	private static final String GET_ALL_STMT = "SELECT * FROM z40180_empTB";
 	private static final String GET_EMPS_BY_DEPTNO = "SELECT * FROM z40180_deptTB WHERE deptno = (" +
-			" SELECT deptno FROM z40180_empTB WHERE empno = ? " +
-			")";
+			"                                              SELECT deptno FROM z40180_empTB WHERE empno = ? " +
+			"                                          )";
 
 	private static final String GET_EMPS_BY_ROW_NUM = " SELECT * FROM ( " +
 			"                                                 SELECT ROW_NUMBER() OVER(ORDER BY hiredate ASC) AS ROWID , * " +
